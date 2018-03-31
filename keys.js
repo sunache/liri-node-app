@@ -7,9 +7,9 @@ exports.twitter= {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 };
 
-// exports.spotify = {
-//     id: process.env.SPOTIFY_ID,
-//     secret: process.env.SPOTIFY_SECRET
-// };
+exports.spotify = {
+    id: process.env.SPOTIFY_ID,
+    secret: process.env.SPOTIFY_SECRET
+};
 
 

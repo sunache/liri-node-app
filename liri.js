@@ -14,18 +14,21 @@ var spotify = require("spotify");
 var request = require("request");
 
 // Twitter Code 
-var Twitter = require("twitter");
-var client = new Twitter(keys.twitter);
+function getTweets() {
+    var Twitter = require("twitter");
 
-var searches = {
-    screen_name: "realDonaldTrump",
-    count: 20
-};
-client.get("statuses/user_timeline", searches, listTweets);
+    var client = new Twitter(keys.twitter);
 
+    var searches = {
+        screen_name: "realDonaldTrump",
+        count: 20
+    };
+    client.get("statuses/user_timeline", searches, listTweets);
+}
 function listTweets(error, tweets, response) {
-
-    if (!error) {
+    console.log(tweets);
+    
+     if (!error) {
     
         var data = [];
         for (var i = 0; i < tweets.length; i++) {
@@ -116,7 +119,7 @@ if (process.argv[2] === "movie-this") {
     Omdb();
 }
 else if (process.argv[2] === "my-tweets") {
-    listTweets();
+    getTweets();
 }
 else if (process.argv[2] === "spotify-this-song") {
     spotify();
