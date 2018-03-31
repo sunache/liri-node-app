@@ -43,40 +43,40 @@ function listTweets(error, tweets, response) {
 }
 
 // Spotify code
-// var spotify = new spotify(keys.spotify);
-// var artistName = function (artist) {
-//     return artist.name;
+var spotify = new spotify(keys.spotify);
+var artistName = function (artist) {
+    return artist.name;
     
-// }
-// var spotify = function (songName) {
-//     if (songName === undefined) {
-//         songName = "perfect";
-//     };
-//     spotify.search({
-//         type: "track",
-//         query: songName
-//     }, function (err, data) {
-//         if (err) {
-//             console.log(err);
-//             return;
+}
+var spotify = function (songName) {
+    if (songName === undefined) {
+        songName = "perfect";
+    };
+    spotify.search({
+        type: "track",
+        query: songName
+    }, function (err, data) {
+        if (err) {
+            console.log(err);
+            return;
         
-//         }
-//         var songs = data.tracks.items;
-//         var data = [];
-//         for (var i = 0; i < songs.length; i++) {
-//             data.push({
-//                 "Artist(s) ": songs[i].artists.map(artistName),
-//                 "Song Name: ": songs[i].name,
-//                 "Preview song: ": songs[i].preview_url,
-//                "Album: ": songs[i].album.name,
+        }
+        var songs = data.tracks.items;
+        var data = [];
+        for (var i = 0; i < songs.length; i++) {
+            data.push({
+                "Artist(s) ": songs[i].artists.map(artistName),
+                "Song Name: ": songs[i].name,
+                "Preview song: ": songs[i].preview_url,
+               "Album: ": songs[i].album.name,
 
-//             });
-//         }
-//         console.log(data);
+            });
+        }
+        console.log(data);
         
-//     });
+    });
         
-// };
+};
 
 
 // Movie Code 
@@ -122,7 +122,7 @@ else if (process.argv[2] === "my-tweets") {
     getTweets();
 }
 else if (process.argv[2] === "spotify-this-song") {
-    spotify();
+   
 }
 else {
     console.log("PLEASE TYPE A COMMAND!");
